@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="cordova-plugin-fixioskeyboard"
-    version="1.0.0">
+    version="1.0.1">
     <name>Cordova Plugin Fix IOS Keyboard Slow load</name>
     <description>
       There is a small problem in iOS that causes a pretty significant delay between the first time the keyboard is requested and when it actually appears. It is only the first time, and seems to be related to the OS trying to cache various properties of the keyboard.
