@@ -4,34 +4,24 @@
 
 static BOOL hasAlreadyCachedKeyboard;
 
-@implementation MyCordovaPlugin
+@implementation FixIOSKeyboard
 
 - (void)pluginInitialize {
+    NSLog(@"Initialize plugin FixIOSKeyboard");
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishLaunching:) name:UIApplicationDidFinishLaunchingNotification object:nil];
 }
 
-- (void)echo:(CDVInvokedUrlCommand *)command {
-  NSString* phrase = [command.arguments objectAtIndex:0];
-  NSLog(@"%@", phrase);
-}
+- (void)finishLaunching:(NSNotification *)notification
+{
+    // Put here the code that should be on the AppDelegate.m
+    NSLog(@"Caching IOS Keyboard UX Fix");
 
-- (void)cacheKeyboard:(CDVInvokedUrlCommand *)command {
-
-  NSLog(@"Caching IOS Keyboard UX Fix");
-  UITextField *field = [UITextField new];
-  [[[[UIApplication sharedApplication] windows] lastObject] addSubview:field];
-  [field becomeFirstResponder];
-  [field resignFirstResponder];
-  [field removeFromSuperview];
-
-  if(! hasAlreadyCachedKeyboard) {
-    NSLog(@"Keyboard has already been cached");
-  }
-  hasAlreadyCachedKeyboard = YES;
-
-  NSString *result = @"this is the result";
-
-  CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
-  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+    // Preloads keyboard so there's no lag on initial keyboard appearance.
+    UITextField *lagFreeField = [[UITextField alloc] init];
+    [self.webView addSubview:lagFreeField];
+    [lagFreeField becomeFirstResponder];
+    [lagFreeField resignFirstResponder];
+    [lagFreeField removeFromSuperview];
 }
 
 @end
