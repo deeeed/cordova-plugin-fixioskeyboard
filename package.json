@@ -1,12 +1,14 @@
 {
   "name": "cordova-plugin-fixioskeyboard",
-  "version": "1.0.1",
-  "url" : "https://github.com/deeeed/cordova-plugin-fixioskeyboard",
-  "email" : "abreton@siteed.net",
+  "version": "1.0.2",
   "author": {
     "name" : "Arthur Breton",
     "email" : "abreton@siteed.net",
     "url" : "http://siteed.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/deeeed/cordova-plugin-fixioskeyboard"
   },
   "cordova": {
     "id": "cordova-plugin-fixioskeyboard",
