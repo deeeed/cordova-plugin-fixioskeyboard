@@ -7,5 +7,5 @@
       "ios"
     ]
   },
-  "description": "A starting point for a Cordova Plugin"
+  "description": "Fix delay when the keyboard is slow to display the first time for IOS"
 }
