@@ -1,10 +1,11 @@
 #import <Cordova/CDVPlugin.h>
+#import <UIKit/UIKit.h>
 
-@interface MyCordovaPlugin : CDVPlugin {
+@interface FixIOSKeyboard : CDVPlugin {
 }
 
 // The hooks for our plugin commands
 - (void)echo:(CDVInvokedUrlCommand *)command;
-- (void)getDate:(CDVInvokedUrlCommand *)command;
+- (void)cacheKeyboard:(CDVInvokedUrlCommand *)command;
 
 @end

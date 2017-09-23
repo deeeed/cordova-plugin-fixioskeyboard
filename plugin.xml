@@ -2,29 +2,29 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="cordova-plugin-fixioskeyboard"
-    version="1.0.0">
+    version="0.1.0">
     <name>Cordova Plugin Fix IOS Keyboard Slow load</name>
     <description>
       There is a small problem in iOS that causes a pretty significant delay between the first time the keyboard is requested and when it actually appears. It is only the first time, and seems to be related to the OS trying to cache various properties of the keyboard.
     </description>
     <license>MIT</license>
     <keywords></keywords>
-    <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
-    <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue>
+    <repo>https://github.com/deeeed/cordova-plugin-fixioskeyboard</repo>
+    <issue>https://github.com/deeeed/cordova-plugin-fixioskeyboard/issues</issue>
 
     <!-- ios -->
     <platform name="ios">
         <js-module src="www/plugin.js" name="plugin">
             <runs/>
-            <clobbers target="MyCordovaPlugin" />
+            <clobbers target="FixIOSKeyboard" />
         </js-module>
         <config-file target="config.xml" parent="/*">
-            <feature name="MyCordovaPlugin">
-                <param name="ios-package" value="MyCordovaPlugin" onload="true" />
+            <feature name="FixIOSKeyboard">
+                <param name="ios-package" value="FixIOSKeyboard" onload="true" />
             </feature>
         </config-file>
 
-        <header-file src="src/ios/MyCordovaPlugin.h" />
-        <source-file src="src/ios/MyCordovaPlugin.m" />
+        <header-file src="src/ios/FixIOSKeyboard.h" />
+        <source-file src="src/ios/FixIOSKeyboard.m" />
     </platform>
 </plugin>
